@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Startup Name Generator',
         theme: ThemeData(
-          primaryColor: Colors.lightGreen,
+          primaryColor: Colors.deepPurple,
         ),
         home: Todo());
   }
@@ -101,9 +101,12 @@ class TodoState extends State<Todo> {
                     child: Text('Add')),
                 RaisedButton(
                     onPressed: () {
-                      loadData();
+                      // loadData(); To retrieve from WS
+                      setState(() {
+                        todoList.clear();
+                      });
                     },
-                    child: Text('Retrieve'))
+                    child: Text('Clear'))
               ],
             ),
           ],
